@@ -20,4 +20,5 @@ COPY --from=build /app/bin/server /app/bin/
 
 # Start server.
 EXPOSE 50051
+
 CMD ["/app/bin/server"]
