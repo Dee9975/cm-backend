@@ -7,7 +7,7 @@ class Client {
 
   Future<void> main(List<String> args) async {
     channel = ClientChannel(
-      "localhost",
+      "matisskalnins-cm-backend-4yrza.ondigitalocean.app",
       port: 50051,
       options: ChannelOptions(
         credentials: ChannelCredentials.insecure(),
