@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message CategoryRequest {
+    string name = 1;
+}
+
+message EmptyRequest {}
+
+message CategoriesResponse {
+    repeated Category categories = 1;
+}
+
+message Category {
+    string name = 1;
+    repeated Post posts = 2;
+}
+
+message Post {
+    string id = 1;
+    string title = 2;
+    string post = 3;
+}
+
+service ForumService {
+    rpc GetAllCategories (EmptyRequest) returns (CategoriesResponse);
+}
