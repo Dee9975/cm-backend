@@ -7,7 +7,7 @@ class Client {
 
   Future<void> main(List<String> args) async {
     channel = ClientChannel(
-      "matisskalnins-cm-backend-4yrza.ondigitalocean.app",
+      "178.62.88.218",
       port: 50051,
       options: ChannelOptions(
         credentials: ChannelCredentials.insecure(),
@@ -25,7 +25,7 @@ class Client {
     try {
       CategoriesResponse response =
           await client.getAllCategories(EmptyRequest());
-      print(response.categories);
+      print(response.categories.first.posts);
     } catch (e, stack) {
       print(e);
     }

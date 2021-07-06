@@ -11,5 +11,6 @@ dependencies:
   protobuf: ^2.0.0
   postgres: ^2.3.2
   dotenv: ^3.0.0
+  supercharged_dart: ^2.0.0
 
 dev_dependencies:

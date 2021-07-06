@@ -1,5 +1,6 @@
 import 'package:dotenv/dotenv.dart';
 import 'package:grpc/grpc.dart';
+import 'package:supercharged_dart/supercharged_dart.dart';
 
 import 'lib/core/database.dart';
 import 'lib/proto/forum/forum.pbgrpc.dart';
@@ -19,10 +20,26 @@ class ForumService extends ForumServiceBase {
     if (query.isNotEmpty) {
       List<Category> categories = [];
       for (final row in query) {
+        List<Post> posts = [];
+        final groupQuery = await _db.query(
+          'select * from "group" where category_id = @category',
+          values: {"category": row["categories"]["id"] as int},
+        );
+
+        for (final r in groupQuery) {
+          posts.add(
+            Post(
+              title: r["group"]["title"],
+              id: r["group"]["id"].toString(),
+              post: "Random post",
+            ),
+          );
+        }
+
         categories.add(
           Category(
             name: row["categories"]["name"],
-            posts: [],
+            posts: posts,
           ),
         );
       }
