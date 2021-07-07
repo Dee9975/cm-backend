@@ -7,8 +7,8 @@ class DB {
     int _port = 25060;
     String _host =
         "db-postgresql-lon1-16483-do-user-9489448-0.b.db.ondigitalocean.com";
-    String _user = "doadmin";
-    String _pass = "fs01jb8g2imbb40q";
+    String _user = "castlemound";
+    String _pass = "d39olrf9e4ov77pc";
     String _name = "cm";
 
     DB db = DB();

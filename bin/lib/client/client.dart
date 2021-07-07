@@ -23,9 +23,9 @@ class Client {
       ),
     );
     try {
-      CategoriesResponse response =
-          await client.getAllCategories(EmptyRequest());
-      print(response.categories.first.posts);
+      CategoriesResponse response = await client.getAllCategories(
+        EmptyRequest(),
+      );
     } catch (e, stack) {
       print(e);
     }
